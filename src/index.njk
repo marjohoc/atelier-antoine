@@ -1,0 +1,142 @@
+---
+layout: layouts/base.njk
+title: "Menuisier fabricant sur-mesure à Blois"
+meta_description: "L'Atelier d'Antoine, menuisier fabricant sur-mesure à Blois. Réalisations de menuiserie extérieure, intérieure et d'agencement haut de gamme."
+---
+
+<!-- ========================================
+     HERO
+     ======================================== -->
+<section class="hero" aria-label="Présentation">
+
+  <div class="hero-bg" aria-hidden="true">
+    {% if atelier.hero_image %}
+      {% image atelier.hero_image, atelier.hero_image_alt, "100vw", "" %}
+    {% else %}
+      <div class="hero-bg-fallback"></div>
+    {% endif %}
+  </div>
+
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Artisan menuisier — Blois, Loir-et-Cher</p>
+    <h1>Menuisier fabricant<br>sur-mesure</h1>
+    <p class="hero-tagline">
+      Conception et réalisation de menuiseries d'exception,<br>
+      de l'esquisse jusqu'à la pose.
+    </p>
+    <a href="/contact/" class="btn btn-gold">Demander un devis</a>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">Découvrir</div>
+</section>
+
+<!-- ========================================
+     SAVOIR-FAIRE
+     ======================================== -->
+<section class="savoir-faire section" id="savoir-faire">
+  <div class="container">
+
+    <div class="savoir-faire-header">
+      <p class="section-label section-label--center">Nos domaines</p>
+      <h2>Trois savoir-faire,<br>une même exigence</h2>
+    </div>
+
+    <div class="sf-grid">
+
+      <!-- Menuiserie extérieure -->
+      <a href="/menuiserie-exterieure/" class="sf-card" aria-label="Découvrir la menuiserie extérieure">
+        <div class="sf-card-img" aria-hidden="true">
+          {%- set extItems = collections.realisations | filterByCategorie("exterieur") -%}
+          {%- if extItems.length and extItems[0].data.photos and extItems[0].data.photos.length -%}
+            {% image extItems[0].data.photos[0].src, extItems[0].data.photos[0].alt, "33vw" %}
+          {%- else -%}
+            <div class="sf-card-placeholder" aria-hidden="true">◈</div>
+          {%- endif -%}
+        </div>
+        <div class="sf-card-overlay">
+          <div class="sf-card-content">
+            <h3>Menuiserie<br>Extérieure</h3>
+            <p>Portes, fenêtres, escaliers extérieurs — l'alliance du beau et du durable.</p>
+            <span class="sf-card-link">Voir les réalisations</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Menuiserie intérieure -->
+      <a href="/menuiserie-interieure/" class="sf-card" aria-label="Découvrir la menuiserie intérieure">
+        <div class="sf-card-img" aria-hidden="true">
+          {%- set intItems = collections.realisations | filterByCategorie("interieur") -%}
+          {%- if intItems.length and intItems[0].data.photos and intItems[0].data.photos.length -%}
+            {% image intItems[0].data.photos[0].src, intItems[0].data.photos[0].alt, "33vw" %}
+          {%- else -%}
+            <div class="sf-card-placeholder" aria-hidden="true">◈</div>
+          {%- endif -%}
+        </div>
+        <div class="sf-card-overlay">
+          <div class="sf-card-content">
+            <h3>Menuiserie<br>Intérieure</h3>
+            <p>Escaliers, portes intérieures, parquet — des volumes qui vous ressemblent.</p>
+            <span class="sf-card-link">Voir les réalisations</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Agencement -->
+      <a href="/agencement/" class="sf-card" aria-label="Découvrir l'agencement sur-mesure">
+        <div class="sf-card-img" aria-hidden="true">
+          {%- set agItems = collections.realisations | filterByCategorie("agencement") -%}
+          {%- if agItems.length and agItems[0].data.photos and agItems[0].data.photos.length -%}
+            {% image agItems[0].data.photos[0].src, agItems[0].data.photos[0].alt, "33vw" %}
+          {%- else -%}
+            <div class="sf-card-placeholder" aria-hidden="true">◈</div>
+          {%- endif -%}
+        </div>
+        <div class="sf-card-overlay">
+          <div class="sf-card-content">
+            <h3>Agencement</h3>
+            <p>Dressing, cuisines, bibliothèques, mobilier — chaque espace optimisé sur-mesure.</p>
+            <span class="sf-card-link">Voir les réalisations</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     PRÉSENTATION ATELIER
+     ======================================== -->
+<section class="section section-alt" id="atelier">
+  <div class="container">
+    <div class="atelier-grid">
+
+      <div class="atelier-img-wrapper">
+        <div class="atelier-img">
+          {% if atelier.atelier_photo %}
+            {% image atelier.atelier_photo, atelier.atelier_photo_alt, "(min-width: 960px) 50vw, 100vw" %}
+          {% else %}
+            <div class="img-placeholder" style="aspect-ratio:4/3;"><span>Photo de l'atelier</span></div>
+          {% endif %}
+        </div>
+        <div class="atelier-img-frame" aria-hidden="true"></div>
+      </div>
+
+      <div class="atelier-text">
+        <p class="section-label">L'atelier</p>
+        <h2>{{ atelier.presentation_titre }}</h2>
+        <div class="atelier-body">
+          {{ atelier.presentation_texte | markdownify | safe }}
+        </div>
+        <div class="atelier-signature">
+          <div class="atelier-signature-bar"></div>
+          <span class="atelier-signature-name">Antoine</span>
+        </div>
+        <a href="/contact/" class="btn btn-outline" style="margin-top:2rem;">Discutons de votre projet</a>
+      </div>
+
+    </div>
+  </div>
+</section>

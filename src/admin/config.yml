@@ -1,0 +1,149 @@
+# ================================================================
+# Decap CMS — Configuration L'Atelier d'Antoine
+# ================================================================
+#
+# AUTHENTIFICATION :
+# ─────────────────
+# Option 1 (recommandée — GitHub) :
+#   1. Créez un OAuth App GitHub : https://github.com/settings/developers
+#      - Homepage URL : https://votre-domaine.vercel.app
+#      - Callback URL : https://api.netlify.com/auth/done
+#   2. Enregistrez votre site sur app.netlify.com (même gratuit)
+#      puis activez GitHub dans Identity > External providers
+#   3. Décommentez base_url et auth_endpoint ci-dessous
+#
+# Option 2 (développement local) :
+#   1. npm install -g decap-server
+#   2. decap-server  (dans un terminal séparé)
+#   3. Décommentez local_backend ci-dessous
+#
+# ================================================================
+
+backend:
+  name: github
+  repo: OWNER/REPO         # ⚠️ Remplacez par votre dépôt (ex: jean-dupont/atelier-antoine)
+  branch: main
+  # base_url: https://api.netlify.com   # Décommentez pour auth Netlify
+  # auth_endpoint: auth                 # Décommentez pour auth Netlify
+
+# Développement local : décommentez la ligne suivante
+# local_backend: true
+
+locale: fr
+
+media_folder: "src/uploads"
+public_folder: "/uploads"
+
+# ================================================================
+# Collections
+# ================================================================
+collections:
+
+  # ── Réalisations ─────────────────────────────────────────────
+  - name: "realisations"
+    label: "Réalisations"
+    label_singular: "Réalisation"
+    folder: "src/realisations"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    summary: "{{title}} — {{sous_categorie}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - label: "Titre"
+        name: "title"
+        widget: "string"
+        hint: "Ex : Porte d'entrée en chêne massif"
+
+      - label: "Description courte"
+        name: "description"
+        widget: "text"
+        hint: "2-3 phrases décrivant la réalisation (affiché dans la galerie)"
+
+      - label: "Catégorie"
+        name: "categorie"
+        widget: "select"
+        options:
+          - { label: "Menuiserie extérieure", value: "exterieur" }
+          - { label: "Menuiserie intérieure", value: "interieur" }
+          - { label: "Agencement", value: "agencement" }
+
+      - label: "Sous-catégorie"
+        name: "sous_categorie"
+        widget: "select"
+        options:
+          - { label: "Portes extérieures",     value: "portes-exterieures" }
+          - { label: "Fenêtres",               value: "fenetres" }
+          - { label: "Escaliers extérieurs",   value: "escaliers-exterieurs" }
+          - { label: "Escaliers intérieurs",   value: "escaliers-interieurs" }
+          - { label: "Portes intérieures",     value: "portes-interieures" }
+          - { label: "Parquet",                value: "parquet" }
+          - { label: "Dressing",               value: "dressing" }
+          - { label: "Cuisine",                value: "cuisine" }
+          - { label: "Bibliothèque",           value: "bibliotheque" }
+          - { label: "Mobilier sur-mesure",    value: "mobilier" }
+
+      - label: "Date de réalisation"
+        name: "date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        required: false
+
+      - label: "Photos (1 à 5)"
+        name: "photos"
+        widget: "list"
+        min: 0
+        max: 5
+        label_singular: "Photo"
+        fields:
+          - label: "Fichier image"
+            name: "src"
+            widget: "image"
+            hint: "JPG ou PNG, largeur recommandée : 1600px minimum"
+          - label: "Description (attribut alt)"
+            name: "alt"
+            widget: "string"
+            hint: "Description précise de la photo pour l'accessibilité et le SEO"
+
+  # ── Paramètres du site ────────────────────────────────────────
+  - name: "settings"
+    label: "Paramètres"
+    files:
+
+      - label: "Présentation de l'atelier"
+        name: "atelier"
+        file: "src/_data/atelier.json"
+        fields:
+          - label: "Image Hero (page d'accueil)"
+            name: "hero_image"
+            widget: "image"
+            required: false
+            hint: "Photo plein écran — paysage, minimum 1920×1080px"
+
+          - label: "Alt de l'image hero"
+            name: "hero_image_alt"
+            widget: "string"
+            required: false
+            default: "Réalisation de menuiserie sur-mesure par L'Atelier d'Antoine"
+
+          - label: "Titre de la présentation"
+            name: "presentation_titre"
+            widget: "string"
+
+          - label: "Texte de présentation"
+            name: "presentation_texte"
+            widget: "markdown"
+            hint: "2 à 4 paragraphes présentant l'atelier"
+
+          - label: "Photo de l'atelier"
+            name: "atelier_photo"
+            widget: "image"
+            required: false
+            hint: "Photo de l'atelier ou du menuisier au travail"
+
+          - label: "Alt de la photo atelier"
+            name: "atelier_photo_alt"
+            widget: "string"
+            required: false
+            default: "L'atelier de menuiserie d'Antoine à Blois"

@@ -1,0 +1,49 @@
+---
+layout: layouts/base.njk
+title: "Agencement sur-mesure"
+meta_description: "Agencement sur-mesure par L'Atelier d'Antoine à Blois : dressing, cuisine, bibliothèque et mobilier bois fabriqués en atelier."
+permalink: /agencement/
+---
+
+<!-- ========================================
+     HERO PAGE
+     ======================================== -->
+<section class="page-hero">
+  <div class="container">
+    <p class="section-label section-label--center">Agencement</p>
+    <h1>Chaque espace,<br>chaque besoin</h1>
+    <p class="page-hero-desc">
+      Dressing, cuisines, bibliothèques, mobilier — L'Atelier d'Antoine
+      imagine et fabrique des solutions d'agencement sur-mesure qui
+      épousent parfaitement vos volumes et vos usages.
+    </p>
+  </div>
+</section>
+
+<!-- ========================================
+     GALERIE FILTRÉE
+     ======================================== -->
+{%- set galleryItems = collections.realisations | filterByCategorie("agencement") -%}
+{%- set filters = [
+  { label: "Dressing",          value: "dressing" },
+  { label: "Cuisine",           value: "cuisine" },
+  { label: "Bibliothèque",      value: "bibliotheque" },
+  { label: "Mobilier",          value: "mobilier" }
+] -%}
+
+{% include "partials/gallery-section.njk" %}
+
+<!-- ========================================
+     CTA
+     ======================================== -->
+<section class="section section-alt" style="text-align:center;">
+  <div class="container">
+    <p class="section-label section-label--center">Votre projet</p>
+    <h2 style="margin-bottom:1.5rem;">Un projet d'agencement ?</h2>
+    <p style="max-width:540px;margin:0 auto 2.5rem;color:rgba(44,32,22,0.72);font-size:1.05rem;">
+      Dressing intégré, cuisine en chêne, bibliothèque du sol au plafond…
+      Décrivez votre espace et recevez une proposition sur-mesure.
+    </p>
+    <a href="/contact/" class="btn btn-gold">Demander un devis</a>
+  </div>
+</section>

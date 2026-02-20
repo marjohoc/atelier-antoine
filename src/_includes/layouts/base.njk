@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title }} — {% endif %}{{ site.name }}</title>
+  <meta name="description" content="{{ meta_description or site.meta_description }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{% if title %}{{ title }} — {% endif %}{{ site.name }}">
+  <meta property="og:description" content="{{ meta_description or site.meta_description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:site_name" content="{{ site.name }}">
+  {% if og_image %}
+  <meta property="og:image" content="{{ site.url }}{{ og_image }}">
+  {% endif %}
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+
+  <!-- Schema.org LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "{{ site.url }}/#business",
+    "name": "{{ site.name }}",
+    "description": "{{ site.meta_description }}",
+    "url": "{{ site.url }}",
+    "telephone": "{{ site.telephone }}",
+    "email": "{{ site.email }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "69 rue de la Picardière",
+      "addressLocality": "Blois",
+      "postalCode": "41000",
+      "addressCountry": "FR"
+    },
+    "sameAs": ["{{ site.instagram }}"],
+    "priceRange": "€€€"
+  }
+  </script>
+</head>
+<body>
+
+  {% include "partials/header.njk" %}
+
+  <main id="main-content">
+    {{ content | safe }}
+  </main>
+
+  {% include "partials/footer.njk" %}
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visionneuse de photos">
+    <button class="lightbox-close" aria-label="Fermer la visionneuse">&times;</button>
+    <button class="lightbox-nav lightbox-prev" aria-label="Photo précédente">&#8249;</button>
+    <div class="lightbox-inner">
+      <img class="lightbox-img" src="" alt="" loading="eager">
+      <p class="lightbox-caption"></p>
+      <p class="lightbox-counter"></p>
+    </div>
+    <button class="lightbox-nav lightbox-next" aria-label="Photo suivante">&#8250;</button>
+  </div>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

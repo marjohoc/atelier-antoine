@@ -1,0 +1,29 @@
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="{{ site.name }} — Accueil">
+      L'Atelier <span>d'Antoine</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Navigation principale">
+      <a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Accueil</a>
+      <a href="/menuiserie-exterieure/" {% if page.url == "/menuiserie-exterieure/" %}aria-current="page"{% endif %}>Extérieure</a>
+      <a href="/menuiserie-interieure/" {% if page.url == "/menuiserie-interieure/" %}aria-current="page"{% endif %}>Intérieure</a>
+      <a href="/agencement/" {% if page.url == "/agencement/" %}aria-current="page"{% endif %}>Agencement</a>
+      <a href="/contact/" class="btn btn-gold" {% if page.url == "/contact/" %}aria-current="page"{% endif %}>Devis</a>
+    </nav>
+
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-mobile">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="nav-mobile" id="nav-mobile" aria-label="Navigation mobile">
+  <a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Accueil</a>
+  <a href="/menuiserie-exterieure/" {% if page.url == "/menuiserie-exterieure/" %}aria-current="page"{% endif %}>Menuiserie Extérieure</a>
+  <a href="/menuiserie-interieure/" {% if page.url == "/menuiserie-interieure/" %}aria-current="page"{% endif %}>Menuiserie Intérieure</a>
+  <a href="/agencement/" {% if page.url == "/agencement/" %}aria-current="page"{% endif %}>Agencement</a>
+  <a href="/contact/" {% if page.url == "/contact/" %}aria-current="page"{% endif %}>Demander un devis</a>
+</nav>

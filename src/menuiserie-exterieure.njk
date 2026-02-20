@@ -1,0 +1,48 @@
+---
+layout: layouts/base.njk
+title: "Menuiserie Extérieure sur-mesure"
+meta_description: "Réalisations de menuiserie extérieure sur-mesure par L'Atelier d'Antoine à Blois : portes d'entrée, fenêtres et escaliers extérieurs en bois massif."
+permalink: /menuiserie-exterieure/
+---
+
+<!-- ========================================
+     HERO PAGE
+     ======================================== -->
+<section class="page-hero">
+  <div class="container">
+    <p class="section-label section-label--center">Menuiserie extérieure</p>
+    <h1>Façades et ouvertures<br>en bois massif</h1>
+    <p class="page-hero-desc">
+      Portes d'entrée, fenêtres, escaliers extérieurs — L'Atelier d'Antoine
+      façonne le bois noble pour sublimer vos façades, allier esthétique
+      et performance thermique.
+    </p>
+  </div>
+</section>
+
+<!-- ========================================
+     GALERIE FILTRÉE
+     ======================================== -->
+{%- set galleryItems = collections.realisations | filterByCategorie("exterieur") -%}
+{%- set filters = [
+  { label: "Portes extérieures",   value: "portes-exterieures" },
+  { label: "Fenêtres",             value: "fenetres" },
+  { label: "Escaliers extérieurs", value: "escaliers-exterieurs" }
+] -%}
+
+{% include "partials/gallery-section.njk" %}
+
+<!-- ========================================
+     CTA
+     ======================================== -->
+<section class="section section-alt" style="text-align:center;">
+  <div class="container">
+    <p class="section-label section-label--center">Votre projet</p>
+    <h2 style="margin-bottom:1.5rem;">Un projet de menuiserie extérieure ?</h2>
+    <p style="max-width:540px;margin:0 auto 2.5rem;color:rgba(44,32,22,0.72);font-size:1.05rem;">
+      Chaque réalisation débute par un échange. Décrivez votre projet
+      et recevez un devis personnalisé sous 48 h.
+    </p>
+    <a href="/contact/" class="btn btn-gold">Demander un devis</a>
+  </div>
+</section>

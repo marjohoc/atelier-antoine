@@ -1,0 +1,51 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Marque -->
+      <div class="footer-brand">
+        <p class="footer-logo">L'Atelier <span>d'Antoine</span></p>
+        <p class="footer-desc">Menuisier fabricant sur-mesure à Blois. Conception et réalisation de menuiseries extérieures, intérieures et d'agencement.</p>
+        <a href="{{ site.instagram }}" target="_blank" rel="noopener noreferrer" class="footer-instagram" aria-label="Suivre L'Atelier d'Antoine sur Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+          @l_atelier_d_antoine
+        </a>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <h4>Nos réalisations</h4>
+        <ul class="footer-links">
+          <li><a href="/menuiserie-exterieure/">Menuiserie extérieure</a></li>
+          <li><a href="/menuiserie-interieure/">Menuiserie intérieure</a></li>
+          <li><a href="/agencement/">Agencement</a></li>
+          <li><a href="/contact/">Demander un devis</a></li>
+        </ul>
+      </div>
+
+      <!-- Coordonnées -->
+      <div>
+        <h4>Contact</h4>
+        <div class="footer-contact-item">
+          <a href="tel:{{ site.telephone | replace(' ', '') }}">{{ site.telephone }}</a>
+        </div>
+        <div class="footer-contact-item">
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        </div>
+        <div class="footer-contact-item">
+          {{ site.adresse }}
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ site.name }} {{ build.year }} — Tous droits réservés</p>
+      <p>Menuisier artisan à Blois, Loir-et-Cher</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,90 @@
+{# ================================================================
+   Macro : section galerie filtrée
+   Paramètres attendus dans le contexte :
+     - galleryItems  : tableau de réalisations (déjà filtré par catégorie)
+     - filters       : tableau [{label, value}] pour les boutons de filtre
+   ================================================================ #}
+
+{%- macro subcatLabel(val) -%}
+  {%- if val == "portes-exterieures" -%}Portes extérieures
+  {%- elif val == "fenetres" -%}Fenêtres
+  {%- elif val == "escaliers-exterieurs" -%}Escaliers extérieurs
+  {%- elif val == "escaliers-interieurs" -%}Escaliers intérieurs
+  {%- elif val == "portes-interieures" -%}Portes intérieures
+  {%- elif val == "parquet" -%}Parquet
+  {%- elif val == "dressing" -%}Dressing
+  {%- elif val == "cuisine" -%}Cuisine
+  {%- elif val == "bibliotheque" -%}Bibliothèque
+  {%- elif val == "mobilier" -%}Mobilier sur-mesure
+  {%- else -%}{{ val }}{%- endif -%}
+{%- endmacro -%}
+
+<section class="gallery-section">
+  <div class="container">
+
+    <!-- Filtres -->
+    <div class="gallery-filters" role="group" aria-label="Filtrer par sous-catégorie">
+      <button class="filter-btn active" data-filter="all" aria-pressed="true">
+        Tout voir
+      </button>
+      {% for f in filters %}
+      <button class="filter-btn" data-filter="{{ f.value }}" aria-pressed="false">
+        {{ f.label }}
+      </button>
+      {% endfor %}
+    </div>
+
+    <!-- Grille -->
+    {% if galleryItems.length %}
+    <div class="gallery-grid">
+      {% for item in galleryItems %}
+      <article
+        class="gallery-item"
+        data-subcategory="{{ item.data.sous_categorie }}"
+        aria-label="{{ item.data.title }}"
+      >
+        <!-- Miniature (première photo) -->
+        <div class="gallery-item-thumb">
+          {% if item.data.photos and item.data.photos.length %}
+            {% image item.data.photos[0].src, item.data.photos[0].alt, "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" %}
+          {% else %}
+            <div class="img-placeholder"><span>Photo à venir</span></div>
+          {% endif %}
+        </div>
+
+        <!-- Toutes les photos (masquées — pour le lightbox) -->
+        {% if item.data.photos and item.data.photos.length > 1 %}
+        <div class="gallery-photo-data" aria-hidden="true">
+          {% for photo in item.data.photos %}
+            {% image photo.src, photo.alt, "100vw" %}
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- Info -->
+        <div class="gallery-item-info">
+          <p class="gallery-item-subcat">
+            {{ subcatLabel(item.data.sous_categorie) }}
+          </p>
+          <h3>{{ item.data.title }}</h3>
+          {% if item.data.description %}
+          <p class="gallery-item-desc">{{ item.data.description }}</p>
+          {% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+    {% else %}
+    <div style="text-align:center; padding:4rem 0; color:rgba(44,32,22,0.5);">
+      <p style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; margin-bottom:1rem;">
+        Réalisations à venir
+      </p>
+      <p style="font-size:0.875rem;">
+        Ajoutez vos premières réalisations via l'interface d'administration.
+      </p>
+    </div>
+    {% endif %}
+
+  </div>
+</section>

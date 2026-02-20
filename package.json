@@ -1,0 +1,19 @@
+{
+  "name": "atelier-antoine",
+  "version": "1.0.0",
+  "description": "Site vitrine L'Atelier d'Antoine — Menuisier fabricant sur-mesure",
+  "scripts": {
+    "start": "eleventy --serve",
+    "dev": "eleventy --serve --watch",
+    "build": "eleventy",
+    "cms": "npx decap-server"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-img": "^5.0.0",
+    "marked": "^17.0.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

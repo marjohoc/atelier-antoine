@@ -1,0 +1,48 @@
+---
+layout: layouts/base.njk
+title: "Menuiserie Intérieure sur-mesure"
+meta_description: "Réalisations de menuiserie intérieure sur-mesure par L'Atelier d'Antoine à Blois : escaliers intérieurs, portes intérieures et parquet en bois massif."
+permalink: /menuiserie-interieure/
+---
+
+<!-- ========================================
+     HERO PAGE
+     ======================================== -->
+<section class="page-hero">
+  <div class="container">
+    <p class="section-label section-label--center">Menuiserie intérieure</p>
+    <h1>Des intérieurs qui<br>vous ressemblent</h1>
+    <p class="page-hero-desc">
+      Escaliers, portes intérieures, parquet — L'Atelier d'Antoine crée
+      des pièces de bois qui structurent vos espaces de vie avec caractère
+      et élégance.
+    </p>
+  </div>
+</section>
+
+<!-- ========================================
+     GALERIE FILTRÉE
+     ======================================== -->
+{%- set galleryItems = collections.realisations | filterByCategorie("interieur") -%}
+{%- set filters = [
+  { label: "Escaliers intérieurs", value: "escaliers-interieurs" },
+  { label: "Portes intérieures",   value: "portes-interieures" },
+  { label: "Parquet",              value: "parquet" }
+] -%}
+
+{% include "partials/gallery-section.njk" %}
+
+<!-- ========================================
+     CTA
+     ======================================== -->
+<section class="section section-alt" style="text-align:center;">
+  <div class="container">
+    <p class="section-label section-label--center">Votre projet</p>
+    <h2 style="margin-bottom:1.5rem;">Un projet de menuiserie intérieure ?</h2>
+    <p style="max-width:540px;margin:0 auto 2.5rem;color:rgba(44,32,22,0.72);font-size:1.05rem;">
+      Escalier sur-mesure, porte intérieure, parquet posé à l'anglaise…
+      Parlons de vos envies et construisons ensemble la solution idéale.
+    </p>
+    <a href="/contact/" class="btn btn-gold">Demander un devis</a>
+  </div>
+</section>
