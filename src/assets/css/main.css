@@ -695,7 +695,13 @@ p:last-child { margin-bottom: 0; }
 /* Variante avec photo de fond */
 .page-hero--image {
   background: var(--text);
-  min-height: 380px;
+  height: 90vh;
+  min-height: 680px;
+  padding-top: calc(var(--nav-h) + 1rem);
+  padding-bottom: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .page-hero--image .page-hero-bg {
