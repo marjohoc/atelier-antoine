@@ -4,27 +4,24 @@
 #
 # AUTHENTIFICATION :
 # ─────────────────
-# Option 1 (recommandée — GitHub) :
-#   1. Créez un OAuth App GitHub : https://github.com/settings/developers
-#      - Homepage URL : https://votre-domaine.vercel.app
-#      - Callback URL : https://api.netlify.com/auth/done
-#   2. Enregistrez votre site sur app.netlify.com (même gratuit)
-#      puis activez GitHub dans Identity > External providers
-#   3. Décommentez base_url et auth_endpoint ci-dessous
+# OAuth géré par deux fonctions Vercel serverless :
+#   GET /api/auth     → redirige vers GitHub
+#   GET /api/callback → échange le code contre un token
 #
-# Option 2 (développement local) :
-#   1. npm install -g decap-server
-#   2. decap-server  (dans un terminal séparé)
-#   3. Décommentez local_backend ci-dessous
+# Variables d'environnement requises sur Vercel :
+#   GITHUB_CLIENT_ID     → votre GitHub OAuth App Client ID
+#   GITHUB_CLIENT_SECRET → votre GitHub OAuth App Client Secret
+#
+# Développement local : décommentez local_backend et commentez base_url/auth_endpoint
 #
 # ================================================================
 
 backend:
   name: github
-  repo: OWNER/REPO         # ⚠️ Remplacez par votre dépôt (ex: jean-dupont/atelier-antoine)
+  repo: marjohoc/atelier-antoine
   branch: main
-  # base_url: https://api.netlify.com   # Décommentez pour auth Netlify
-  # auth_endpoint: auth                 # Décommentez pour auth Netlify
+  base_url: https://atelier-antoine.vercel.app
+  auth_endpoint: api/auth
 
 # Développement local : décommentez la ligne suivante
 # local_backend: true
