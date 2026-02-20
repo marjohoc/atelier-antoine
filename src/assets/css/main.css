@@ -710,7 +710,7 @@ p:last-child { margin-bottom: 0; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 40%;
+  object-position: center 20%;
 }
 
 .page-hero--image .page-hero-overlay {
@@ -743,6 +743,29 @@ p:last-child { margin-bottom: 0; }
 
 .page-hero--image .page-hero-desc {
   color: rgba(255, 255, 255, 0.82);
+}
+
+/* Indicateur "Découvrir" sur les pages avec image */
+.page-hero--image::before {
+  content: 'Découvrir';
+  position: absolute;
+  bottom: 2.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-b);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+  z-index: 2;
+  animation: scrollBounce 2.4s ease-in-out infinite;
+}
+
+.page-hero--image::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.35), transparent) !important;
+  z-index: 2;
 }
 
 .page-hero::after {
