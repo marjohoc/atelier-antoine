@@ -348,8 +348,8 @@ p:last-child { margin-bottom: 0; }
    7. Hero (page d'accueil)
    -------------------------------- */
 .hero {
-  height: 75vh;
-  min-height: 560px;
+  height: 90vh;
+  min-height: 680px;
   position: relative;
   display: flex;
   align-items: center;
@@ -357,7 +357,7 @@ p:last-child { margin-bottom: 0; }
   text-align: center;
   overflow: hidden;
   background: var(--text);
-  padding-top: var(--nav-h);
+  padding-top: calc(var(--nav-h) + 1rem);
   padding-bottom: 7rem;
 }
 
