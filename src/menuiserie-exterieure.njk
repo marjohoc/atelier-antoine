@@ -8,8 +8,14 @@ permalink: /menuiserie-exterieure/
 <!-- ========================================
      HERO PAGE
      ======================================== -->
-<section class="page-hero">
-  <div class="container">
+<section class="page-hero page-hero--image">
+  {% if atelier.hero_image %}
+  <div class="page-hero-bg" aria-hidden="true">
+    {% image atelier.hero_image, atelier.hero_image_alt, "100vw" %}
+  </div>
+  {% endif %}
+  <div class="page-hero-overlay" aria-hidden="true"></div>
+  <div class="page-hero-inner container">
     <p class="section-label section-label--center">Menuiserie extérieure</p>
     <h1>Façades et ouvertures<br>en bois massif</h1>
     <p class="page-hero-desc">

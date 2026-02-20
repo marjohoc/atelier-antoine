@@ -8,8 +8,14 @@ permalink: /contact/
 <!-- ========================================
      HERO PAGE
      ======================================== -->
-<section class="page-hero">
-  <div class="container">
+<section class="page-hero page-hero--image">
+  {% if atelier.hero_image %}
+  <div class="page-hero-bg" aria-hidden="true">
+    {% image atelier.hero_image, atelier.hero_image_alt, "100vw" %}
+  </div>
+  {% endif %}
+  <div class="page-hero-overlay" aria-hidden="true"></div>
+  <div class="page-hero-inner container">
     <p class="section-label section-label--center">Contact</p>
     <h1>Parlons de<br>votre projet</h1>
     <p class="page-hero-desc">
