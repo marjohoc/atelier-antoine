@@ -349,7 +349,7 @@ p:last-child { margin-bottom: 0; }
    -------------------------------- */
 .hero {
   height: 75vh;
-  min-height: 520px;
+  min-height: 560px;
   position: relative;
   display: flex;
   align-items: center;
@@ -357,6 +357,8 @@ p:last-child { margin-bottom: 0; }
   text-align: center;
   overflow: hidden;
   background: var(--text);
+  padding-top: var(--nav-h);
+  padding-bottom: 4.5rem;
 }
 
 .hero-bg {
