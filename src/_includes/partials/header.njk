@@ -1,13 +1,13 @@
 <header class="nav" id="nav">
   <div class="nav-inner">
     <a href="/" class="nav-logo" aria-label="{{ site.name }} — Accueil">
-      L'Atelier <span>d'Antoine</span>
+      <img src="/assets/images/logo.png" alt="{{ site.name }}" class="nav-logo-img">
     </a>
 
     <nav class="nav-links" aria-label="Navigation principale">
       <a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Accueil</a>
-      <a href="/menuiserie-exterieure/" {% if page.url == "/menuiserie-exterieure/" %}aria-current="page"{% endif %}>Extérieure</a>
-      <a href="/menuiserie-interieure/" {% if page.url == "/menuiserie-interieure/" %}aria-current="page"{% endif %}>Intérieure</a>
+      <a href="/menuiserie-exterieure/" {% if page.url == "/menuiserie-exterieure/" %}aria-current="page"{% endif %}>Menuiserie Extérieure</a>
+      <a href="/menuiserie-interieure/" {% if page.url == "/menuiserie-interieure/" %}aria-current="page"{% endif %}>Menuiserie Intérieure</a>
       <a href="/agencement/" {% if page.url == "/agencement/" %}aria-current="page"{% endif %}>Agencement</a>
       <a href="/contact/" class="btn btn-gold" {% if page.url == "/contact/" %}aria-current="page"{% endif %}>Devis</a>
     </nav>

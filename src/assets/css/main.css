@@ -216,16 +216,15 @@ p:last-child { margin-bottom: 0; }
 }
 
 .nav-logo {
-  font-family: var(--font-h);
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: var(--text);
-  white-space: nowrap;
-  letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
-.nav-logo span {
-  color: var(--accent);
+.nav-logo-img {
+  height: 42px;
+  width: auto;
+  display: block;
 }
 
 .nav-links {
@@ -1265,25 +1264,25 @@ p:last-child { margin-bottom: 0; }
    15. Footer
    -------------------------------- */
 .footer {
-  background: var(--text);
-  color: rgba(255, 255, 255, 0.65);
-  padding: 5rem 0 2.5rem;
+  background: #1C2018;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 3.5rem 0 1.75rem;
 }
 
 .footer-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  gap: 4rem;
-  margin-bottom: 4rem;
-  padding-bottom: 4rem;
+  gap: 3rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footer-logo {
   font-family: var(--font-h);
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   color: var(--white);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .footer-logo span {
@@ -1291,10 +1290,10 @@ p:last-child { margin-bottom: 0; }
 }
 
 .footer-desc {
-  font-size: 0.875rem;
-  line-height: 1.75;
-  max-width: 290px;
-  margin-bottom: 1.75rem;
+  font-size: 0.825rem;
+  line-height: 1.7;
+  max-width: 270px;
+  margin-bottom: 1.5rem;
 }
 
 .footer-instagram {
