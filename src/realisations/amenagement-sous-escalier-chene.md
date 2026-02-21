@@ -4,6 +4,7 @@ description: "Aménagement complet sous escalier alliant MDF laqué blanc et ch�
 categorie: "agencement"
 sous_categorie: "rangement"
 date: 2026-02-01
+cover_position: "bottom"
 photos:
   - src: /uploads/sous-escalier-chene-4.jpg
     alt: Banquette de rangement sous escalier en chêne et MDF laqué blanc avec éclairage LED, L'Atelier d'Antoine
