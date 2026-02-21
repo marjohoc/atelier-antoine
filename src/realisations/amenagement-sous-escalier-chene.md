@@ -5,10 +5,10 @@ categorie: "agencement"
 sous_categorie: "rangement"
 date: 2026-02-01
 photos:
+  - src: /uploads/sous-escalier-chene-2.jpg
+    alt: Aménagement sous escalier chêne et MDF blanc, banquette, étagères et éclairage LED intégré, L'Atelier d'Antoine
   - src: /uploads/sous-escalier-chene-1.jpg
     alt: Vue d'ensemble aménagement sous escalier MDF laqué et chêne avec éclairage LED, L'Atelier d'Antoine Blois
-  - src: /uploads/sous-escalier-chene-2.jpg
-    alt: Aménagement sous escalier chêne et MDF blanc, étagères et claustra, éclairage LED intégré, L'Atelier d'Antoine
   - src: /uploads/sous-escalier-chene-3.jpg
     alt: Coffre de rangement chaussures à trappe invisible en chêne sous escalier, L'Atelier d'Antoine Blois
   - src: /uploads/sous-escalier-chene-4.jpg
