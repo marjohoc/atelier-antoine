@@ -883,8 +883,13 @@ p:last-child { margin-bottom: 0; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: var(--thumb-pos, center);
+  object-position: center;
   transition: transform 0.55s ease;
+}
+
+.gallery-item-thumb--bottom img,
+.gallery-item-thumb--bottom picture img {
+  object-position: center bottom !important;
 }
 
 .gallery-item:hover .gallery-item-thumb img,

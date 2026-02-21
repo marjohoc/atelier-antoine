@@ -44,7 +44,7 @@
         aria-label="{{ item.data.title }}"
       >
         <!-- Miniature (première photo) -->
-        <div class="gallery-item-thumb"{% if item.data.cover_position %} style="--thumb-pos: {{ item.data.cover_position }}"{% endif %}>
+        <div class="gallery-item-thumb{% if item.data.cover_position == 'bottom' %} gallery-item-thumb--bottom{% endif %}">
           {% if item.data.photos and item.data.photos.length %}
             {% image item.data.photos[0].src, item.data.photos[0].alt, "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" %}
           {% else %}
