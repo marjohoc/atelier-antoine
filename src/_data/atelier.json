@@ -4,5 +4,11 @@
   "presentation_titre": "Un atelier, une passion, un savoir-faire",
   "presentation_texte": "Installé à Blois depuis 3 ans,  L'Atelier d'Antoine conçoit et fabrique des pièces de menuiserie sur-mesure alliant tradition artisanale et exigence contemporaine. Chaque projet est unique, pensé avec vous et réalisé avec les essences de bois les plus nobles : chêne, frêne, hêtre ou bois exotiques selon vos désirs.\n\nDu dessin au chantier, Antoine suit votre projet de A à Z pour vous garantir une réalisation à la hauteur de vos attentes.",
   "atelier_photo": "/uploads/atelier-planches.jpg",
-  "atelier_photo_alt": "L'atelier de menuiserie d'Antoine à Blois"
+  "atelier_photo_alt": "L'atelier de menuiserie d'Antoine à Blois",
+  "sf_exterieur_image": "/uploads/sf-exterieure.jpg",
+  "sf_exterieur_image_alt": "Porte d'entrée sur-mesure en bois gris, réalisation L'Atelier d'Antoine",
+  "sf_interieur_image": "/uploads/sf-interieure.jpg",
+  "sf_interieur_image_alt": "Escalier en chêne avec balustres en fer forgé, réalisation L'Atelier d'Antoine",
+  "sf_agencement_image": "/uploads/sf-agencement.jpg",
+  "sf_agencement_image_alt": "Agencement sous escalier en chêne avec éclairage LED, réalisation L'Atelier d'Antoine"
 }

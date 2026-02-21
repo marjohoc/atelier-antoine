@@ -51,6 +51,8 @@ meta_description: "L'Atelier d'Antoine, menuisier fabricant sur-mesure à Blois.
           {%- set extItems = collections.realisations | filterByCategorie("exterieur") -%}
           {%- if extItems.length and extItems[0].data.photos and extItems[0].data.photos.length -%}
             {% image extItems[0].data.photos[0].src, extItems[0].data.photos[0].alt, "33vw" %}
+          {%- elif atelier.sf_exterieur_image -%}
+            {% image atelier.sf_exterieur_image, atelier.sf_exterieur_image_alt, "33vw" %}
           {%- else -%}
             <div class="sf-card-placeholder" aria-hidden="true">◈</div>
           {%- endif -%}
@@ -70,6 +72,8 @@ meta_description: "L'Atelier d'Antoine, menuisier fabricant sur-mesure à Blois.
           {%- set intItems = collections.realisations | filterByCategorie("interieur") -%}
           {%- if intItems.length and intItems[0].data.photos and intItems[0].data.photos.length -%}
             {% image intItems[0].data.photos[0].src, intItems[0].data.photos[0].alt, "33vw" %}
+          {%- elif atelier.sf_interieur_image -%}
+            {% image atelier.sf_interieur_image, atelier.sf_interieur_image_alt, "33vw" %}
           {%- else -%}
             <div class="sf-card-placeholder" aria-hidden="true">◈</div>
           {%- endif -%}
@@ -89,6 +93,8 @@ meta_description: "L'Atelier d'Antoine, menuisier fabricant sur-mesure à Blois.
           {%- set agItems = collections.realisations | filterByCategorie("agencement") -%}
           {%- if agItems.length and agItems[0].data.photos and agItems[0].data.photos.length -%}
             {% image agItems[0].data.photos[0].src, agItems[0].data.photos[0].alt, "33vw" %}
+          {%- elif atelier.sf_agencement_image -%}
+            {% image atelier.sf_agencement_image, atelier.sf_agencement_image_alt, "33vw" %}
           {%- else -%}
             <div class="sf-card-placeholder" aria-hidden="true">◈</div>
           {%- endif -%}
