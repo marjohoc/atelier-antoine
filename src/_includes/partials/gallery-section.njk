@@ -44,13 +44,16 @@
         aria-label="{{ item.data.title }}"
       >
         <!-- Miniature (première photo) -->
-        <div class="gallery-item-thumb{% if item.data.cover_position == 'bottom' %} gallery-item-thumb--bottom{% endif %}">
-          {% if item.data.photos and item.data.photos.length %}
-            {% image item.data.photos[0].src, item.data.photos[0].alt, "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" %}
-          {% else %}
-            <div class="img-placeholder"><span>Photo à venir</span></div>
-          {% endif %}
+        {% if item.data.photos and item.data.photos.length %}
+        <div class="gallery-item-thumb"
+          style="background-image: url('{{ item.data.photos[0].src }}');{% if item.data.cover_position %} background-position: {{ item.data.cover_position }};{% endif %}"
+          role="img" aria-label="{{ item.data.photos[0].alt }}">
         </div>
+        {% else %}
+        <div class="gallery-item-thumb">
+          <div class="img-placeholder"><span>Photo à venir</span></div>
+        </div>
+        {% endif %}
 
         <!-- Toutes les photos (masquées — pour le lightbox) -->
         {% if item.data.photos and item.data.photos.length > 1 %}
