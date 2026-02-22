@@ -215,6 +215,26 @@ p:last-child { margin-bottom: 0; }
   justify-content: space-between;
 }
 
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-insta {
+  color: var(--text);
+  opacity: 0.55;
+  transition: opacity var(--transition), color var(--transition);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.nav-insta:hover {
+  opacity: 1;
+  color: var(--accent);
+}
+
 .nav-logo {
   font-family: var(--font-h);
   font-size: 1.5rem;
