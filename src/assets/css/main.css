@@ -936,6 +936,19 @@ p:last-child { margin-bottom: 0; }
   overflow: hidden;
 }
 
+/* Mobile : pas de hover, description toujours visible */
+@media (hover: none) {
+  .gallery-item:hover .gallery-item-info {
+    transform: none;
+  }
+
+  .gallery-item-desc {
+    display: block;
+    -webkit-line-clamp: unset;
+    overflow: visible;
+  }
+}
+
 /* Placeholder sans photo */
 .img-placeholder {
   width: 100%;
