@@ -4,6 +4,7 @@ description: "Escalier sur-mesure en chêne massif avec balustres en fer forgé 
 categorie: "interieur"
 sous_categorie: "escaliers-interieurs"
 date: 2025-05-01
+cover_position: "100% 100%"
 photos:
   - src: /uploads/escalier-chene-fer-forge-1.jpg
     alt: Escalier en chêne massif avec balustres en fer forgé, vue garde-corps, L'Atelier d'Antoine Blois
